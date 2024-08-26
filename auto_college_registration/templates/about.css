@@ -1,0 +1,173 @@
+
+  
+  
+  .about-us {
+    font-family: Arial, sans-serif;
+  }
+  
+  .hero-section-about {
+
+    color: white;
+    text-align: center;
+    padding: 100px 0;
+    height: 50vh;
+  }
+  
+  
+  .hero-content h1 {
+    font-size: 3em;
+    margin: 0;
+  }
+  
+  .hero-content p {
+    font-size: 1.2em;
+    margin-top: 10px;
+  }
+  
+  .about-company {
+    padding: 50px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+  }
+  
+  .about-company-content {
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+  }
+  
+  .about-company-text {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .about-company-text h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+  
+  .about-company-text p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+  }
+  
+  .company-image {
+    flex: 1;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .company-image img {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 10px;
+  }
+  
+  
+  /* third section............................................................................. */
+  
+  .unique-factors {
+    background-color: #f9f9f9;
+    padding: 50px 20px;
+    text-align: center;
+  }
+  
+  .unique-factors h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+  
+  .factors-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+  }
+  
+  .factor {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    width: 150px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .factor img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+  }
+  
+  .factor p {
+    font-size: 1em;
+    color: #333;
+  }
+  
+  .factor:nth-child(4) {
+    background-color: #9A5865;
+    color: white;
+  }
+  
+  .factor:nth-child(4) p {
+    color: white;
+  }
+  
+  
+  /* last section ..................................................................................... */
+  
+  
+  .meet-team h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+  
+  .meet-team p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    padding: 0 5rem;
+  }
+  
+  .team-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .team-member {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    width: 22%;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .team-member img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+  
+  .team-member h3 {
+    font-size: 1.2em;
+    margin: 10px 0 5px;
+  }
+  
+  .team-member p {
+    font-size: 1em;
+    color: #333;
+  }
+  
+  .team-member a img {
+    width: 20px;
+    height: 20px;
+  }
+  

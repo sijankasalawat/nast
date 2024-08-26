@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Registration Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+</head>
+<body>
+    <div class="container">
+        <div id="message-container"></div>
+        
+        <div class="left">
+            <h2 style="color: #6f4d38;">Upload Documents</h2>
+            <form id="uploadForm" action="/index" method="POST" enctype="multipart/form-data">
+
+                <div class="upload-area">
+                    <img src="{{ url_for('static', filename='upload.png') }}" alt="Upload Icon" class="upload-icon" />
+                    <label for="certificate">Upload Certificate</label>
+                    <input type="file" id="certificate" name="certificate" accept="image/*" required onchange="previewImage(this, 'certificatePreview', 'certificateFileName')" />
+                    <div class="file-info">
+                        <p style="color: blueviolet;" id="certificateFileName" class="file-name"></p>
+                        <img id="certificatePreview" class="preview" style="display: none;" />
+                    </div>
+                    <p>Drag & Drop files or Paste <strong>Ctrl+V</strong> or Upload</p>
+                    <p class="size-limit">up to <strong>20 MB</strong> image size</p>
+                </div>
+
+                <div class="upload-area">
+                    <img src="{{ url_for('static', filename='upload.png') }}" alt="Upload Icon" class="upload-icon" />
+                    <label class="label1" for="marksheet" style="color: #5e3023;">Upload Marksheet</label>
+                    <input type="file" id="marksheet" name="marksheet" accept="image/*" required onchange="previewImage(this, 'marksheetPreview', 'marksheetFileName')" />
+                    <div class="file-info">
+                        <p style="color: blueviolet;" id="marksheetFileName" class="file-name"></p>
+                        <img id="marksheetPreview" class="preview" style="display: none;" />
+                    </div>
+                    <p>Drag & Drop files or Paste <strong>Ctrl+V</strong> or Upload</p>
+                    <p class="size-limit">up to <strong>20 MB</strong> image size</p>
+                </div>
+
+                <button type="submit" class="browse-button">Submit</button>
+            </form>
+            <div class="progress-container" style="display: none;">
+                <div id="progress-bar"></div>
+            </div>
+        </div>
+
+        <div class="right" style="display: none;">
+            <div class="form-container">
+                <div class="form-header">
+                    <h1>Registration Form</h1>
+                </div>
+                <div class="form-body">
+                    <form id="saveForm">
+                        <h2>Personal Information</h2>
+                        <label for="fullName">Full Name:</label>
+                        <input type="text" id="fullName" name="Full_Name">
+                        <label for="address">Address:</label>
+                        <input type="text" id="address" name="City">
+                        <label for="dob">Date of Birth:</label>
+                        <input type="text" id="dob" name="Date_of_Birth">
+                        <label for="previousSchool">Previous School Name:</label>
+                        <input type="text" id="previousSchool" name="School_Name">
+
+                        <h2>Education Status</h2>
+                        <label for="examYear">SEE Exam Year:</label>
+                        <input type="text" id="examYear" name="Exam_Year">
+                        <label for="symbolNo">Symbol No:</label>
+                        <input type="text" id="symbolNo" name="Symbol_No">
+                        <label for="yearOfCompletion">Year of Completion:</label>
+                        <input type="text" id="yearOfCompletion" name="Date_of_Issue">
+                        <label for="gpa">Grade Point Average (GPA):</label>
+                        <input type="text" id="gpa" name="GPA">
+
+                        <h2>Subjects and Grades</h2>
+                        <table>
+                            <tr>
+                                <th>Subjects</th>
+                                <th>Final Grade</th>
+                            </tr>
+                            <tr>
+                                <td>Nepali</td>
+                                <td><input type="text" id="nepali" name="Nepali"></td>
+                            </tr>
+                            <tr>
+                                <td>English</td>
+                                <td><input type="text" id="english" name="English"></td>
+                            </tr>
+                            <tr>
+                                <td>Maths</td>
+                                <td><input type="text" id="maths" name="Maths"></td>
+                            </tr>
+                            <tr>
+                                <td>Science</td>
+                                <td><input type="text" id="science" name="Science"></td>
+                            </tr>
+                            <tr>
+                                <td>Social</td>
+                                <td><input type="text" id="social" name="Social"></td>
+                            </tr>
+                            <tr>
+                                <td>Opt-I Mathematics</td>
+                                <td><input type="text" id="optI" name="Opt_I_Mathematics"></td>
+                            </tr>
+                            <tr>
+                                <td>Opt-II Science</td>
+                                <td><input type="text" id="optII" name="Opt_II_Science"></td>
+                            </tr>
+                        </table>
+                        <button type="submit">Save</button>
+                    </form>
+                    
+                    <form id="downloadForm">
+                        <input type="hidden" name="Full_Name" id="downloadFullName">
+                        <input type="hidden" name="School_Name" id="downloadSchoolName">
+                        <input type="hidden" name="City" id="downloadCity">
+                        <input type="hidden" name="Exam_Year" id="downloadExamYear">
+                        <input type="hidden" name="GPA" id="downloadGPA">
+                        <input type="hidden" name="Date_of_Birth" id="downloadDOB">
+                        <input type="hidden" name="Symbol_No" id="downloadSymbolNo">
+                        <input type="hidden" name="Date_of_Issue" id="downloadDateOfIssue">
+                        <input type="hidden" name="Nepali" id="downloadNepali">
+                        <input type="hidden" name="English" id="downloadEnglish">
+                        <input type="hidden" name="Maths" id="downloadMaths">
+                        <input type="hidden" name="Science" id="downloadScience">
+                        <input type="hidden" name="Social" id="downloadSocial">
+                        <input type="hidden" name="Opt_I_Mathematics" id="downloadOptI">
+                        <input type="hidden" name="Opt_II_Science" id="downloadOptII">
+                        <button type="submit">Download PDF</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
